@@ -23,9 +23,9 @@ gun = circle(150,350,20)
 penSize(1)
 
 # ПОЯВЛЕИЕ ЗВЁЗД
-KOLVO = 20
+starAmount = 20
 count = 0
-starMas = [line(0,0,0,0)]*KOLVO
+starMas = [line(0,0,0,0)]*starAmount
 
 def starLaunch():
     if count2 == 100:
@@ -35,8 +35,8 @@ def starLaunch():
     global count
     a = 0.9 * ran + 0.1
     y = 700 * random()
-    deleteObject(starMas[count % KOLVO])
-    starMas[count % KOLVO] = polygon([(1200 + 50 * a, y + 0 * a), (1200 + 60 * a, y + 40 * a), (1200 + 100 * a, y + 50 * a), (1200 + 60 * a, y + 60 * a), (1200 + 50 * a, y + 100 * a), (1200 + 40 * a, y + 60 * a), (1200 + 0 * a, y + 50 * a), (1200 + 40 * a, y + 40 * a)])
+    deleteObject(starMas[count % starAmount])
+    starMas[count % starAmount] = polygon([(1200 + 50 * a, y + 0 * a), (1200 + 60 * a, y + 40 * a), (1200 + 100 * a, y + 50 * a), (1200 + 60 * a, y + 60 * a), (1200 + 50 * a, y + 100 * a), (1200 + 40 * a, y + 60 * a), (1200 + 0 * a, y + 50 * a), (1200 + 40 * a, y + 40 * a)])
     count += 1
 
 onTimer(starLaunch, 500 )
@@ -44,7 +44,7 @@ onTimer(starLaunch, 500 )
 
 # ДВИЖЕНИЕ
 def starPush():
-    for i in range(KOLVO):
+    for i in range(starAmount):
         moveObjectBy(starMas[i], -2-count2 // 4, 0)
 
 onTimer(starPush, 10)
@@ -69,15 +69,15 @@ def control(event):
         shot = line(150,yCoord(gun)+22,1200,yCoord(gun)+22)
         penColor(0, 0, 0)
         penSize(1)
-        for i in range(KOLVO):
+        for i in range(starAmount):
             if yCoord(gun)+15 > coords(starMas[i])[1] and yCoord(gun)+15 < coords(starMas[i])[3] :
                 deleteObject(starMas[i])
                 starMas[i] = line(0,0,0,0)
                 count2 +=1
 
-
-shot = line(0,0,0,0)
 onKey(control)
+shot = line(0,0,0,0)
+
 
 # ЗАДЕРЖКА УДАЛЕНИЯ
 def zaderahka():
