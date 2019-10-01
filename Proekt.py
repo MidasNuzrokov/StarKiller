@@ -20,7 +20,7 @@ penSize(30)
 penColor(100,100,100)
 strip1 = line(25,350,180,350)
 penColor(0,0,0)
-penSize(5)
+penSize(10)
 strip2 = line(22,350,180,350)
 penColor(0,0,0)
 penSize(5)
@@ -61,10 +61,10 @@ def control(event):
     global shot, count2
     # ДВИЖЕНИЕ Старкиллера
     if event.keycode == VK_UP:
-        moveObjectBy(telo, 0, -14)
-        moveObjectBy(strip1, 0, -14)
-        moveObjectBy(strip2, 0, -14)
-        moveObjectBy(gun, 0, -14)
+        moveObjectBy(telo, 0, -20)
+        moveObjectBy(strip1, 0, -20)
+        moveObjectBy(strip2, 0, -20)
+        moveObjectBy(gun, 0, -20)
     if event.keycode == VK_DOWN:
         moveObjectBy(telo, 0, 14)
         moveObjectBy(strip1, 0, 14)
@@ -72,7 +72,7 @@ def control(event):
         moveObjectBy(gun, 0, 14)
     # СТРЕЛЬБА
     if event.keycode == VK_SPACE:
-        penSize(30)
+        penSize(10)
         penColor(220,0,0)
         shot = line(150,yCoord(gun)+22,1200,yCoord(gun)+22)
         penColor(0, 0, 0)
