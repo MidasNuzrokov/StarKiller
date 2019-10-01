@@ -42,7 +42,9 @@ def starLaunch():
     a = 0.9 * ran + 0.1
     y = 700 * random()
     deleteObject(starMas[count % starAmount])
-    starMas[count % starAmount] = polygon([(1200 + 50 * a, y + 0 * a), (1200 + 60 * a, y + 40 * a), (1200 + 100 * a, y + 50 * a), (1200 + 60 * a, y + 60 * a), (1200 + 50 * a, y + 100 * a), (1200 + 40 * a, y + 60 * a), (1200 + 0 * a, y + 50 * a), (1200 + 40 * a, y + 40 * a)])
+    starMas[count % starAmount] = polygon([(1200 + 0 * a, y - 16 * a), (1200 - 25 * a, y - 34 * a), (1200 - 15 * a, y - 5 * a),
+    (1200 - 40 * a, y + 13 * a), (1200 - 9 * a, y + 13 * a), (1200 + 0 * a, y + 40 * a), (1200 + 9 * a, y + 13 * a), (1200 + 40 * a, y + 13 * a),
+    (1200 + 15 * a, y - 5 * a), (1200 + 25 * a, y - 34 * a)])
     count += 1
 
 onTimer(starLaunch, 500 )#долет до звезд
