@@ -92,7 +92,7 @@ def zaderahka():
     global shot
     deleteObject(shot)
 
-onTimer(zaderahka,120)
+onTimer(zaderahka,50)
 
 
 run()
