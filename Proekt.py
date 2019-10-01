@@ -66,10 +66,20 @@ def control(event):
         moveObjectBy(strip2, 0, -20)
         moveObjectBy(gun, 0, -20)
     if event.keycode == VK_DOWN:
-        moveObjectBy(telo, 0, 14)
-        moveObjectBy(strip1, 0, 14)
-        moveObjectBy(strip2, 0, 14)
-        moveObjectBy(gun, 0, 14)
+        moveObjectBy(telo, 0, 20)
+        moveObjectBy(strip1, 0, 20)
+        moveObjectBy(strip2, 0, 20)
+        moveObjectBy(gun, 0, 20)
+    if event.keycode == VK_LEFT:
+        moveObjectBy(telo, -5, 0)
+        moveObjectBy(strip1, -5, 0)
+        moveObjectBy(strip2, -5, 0)
+        moveObjectBy(gun, -5, 0)
+    if event.keycode == VK_RIGHT:
+        moveObjectBy(telo, 5, 0)
+        moveObjectBy(strip1, 5, 0)
+        moveObjectBy(strip2, 5, 0)
+        moveObjectBy(gun, 5, 0)
     # СТРЕЛЬБА
     if event.keycode == VK_SPACE:
         penSize(10)
