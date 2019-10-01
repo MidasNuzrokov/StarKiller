@@ -1,25 +1,31 @@
 from graph import *
 from random import *
 
+#---------------------------------
 windowSize(1200, 700)
 canvasSize(1200, 700)
 
 
 # ФОН
-brushColor(50, 50, 100)
+brushColor(0, 0, 0)
 polygon([(0, 0), (0, 700), (1200, 700), (1200, 0)])
 
 
-# РАКЕТА
-brushColor(100,100,100)
+# БАЗА СТАРКИЛЛЕР
+penSize(5)
+penColor('SkyBlue')
+brushColor('LightSlateGray')
 telo = circle(100, 350, 80)
 penSize(30)
-penColor(30,30,30)
-strip = line(20,350,180,350)
+penColor(100,100,100)
+strip1 = line(25,350,180,350)
+penColor(0,0,0)
+penSize(5)
+strip2 = line(22,350,180,350)
 penColor(0,0,0)
 penSize(5)
 brushColor(200,0,0)
-gun = circle(150,350,20)
+gun = circle(170,350,20)# glaz
 penSize(1)
 
 # ПОЯВЛЕИЕ ЗВЁЗД
@@ -56,11 +62,13 @@ def control(event):
     # ДВИЖЕНИЕ РАКЕТЫ
     if event.keycode == VK_UP:
         moveObjectBy(telo, 0, -14)
-        moveObjectBy(strip, 0, -14)
+        moveObjectBy(strip1, 0, -14)
+        moveObjectBy(strip2, 0, -14)
         moveObjectBy(gun, 0, -14)
     if event.keycode == VK_DOWN:
         moveObjectBy(telo, 0, 14)
-        moveObjectBy(strip, 0, 14)
+        moveObjectBy(strip1, 0, 14)
+        moveObjectBy(strip2, 0, 14)
         moveObjectBy(gun, 0, 14)
     # СТРЕЛЬБА
     if event.keycode == VK_SPACE:
